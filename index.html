@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Fragen游戏, HTML5射击游戏, 第一人称射击游戏, 在线FPS游戏, WebGL射击, 浏览器游戏, 免费枪战游戏,, 3D射击游戏, FPS网页游戏, 无需下载游戏, 免费玩Fragen, Fragen怎么玩">
+  <meta name="description" content="Fragen 是一款基于 HTML5 的第一人称射击（FPS）游戏，支持现代浏览器在线畅玩，无需下载。体验快节奏枪战、多种武器切换和战术对抗，立即在网页中嵌入并试玩！">
+  <title>Fragen射击游戏 - 立即免费在线玩，无需下载！</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      background: #181c24;
+      color: #f5f6fa;
+    }
+    header {
+      background: #232946;
+      padding: 1.5rem 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .game-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .game-iframe {
+      width: 100%;
+      max-width: 700px;
+      aspect-ratio: 16/9;
+      border: 2px solid #232946;
+      border-radius: 12px;
+      background: #222;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    }
+    .play-btn {
+      background: #eebf63;
+      color: #232946;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      padding: 0.8rem 2.2rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-bottom: 1rem;
+    }
+    .play-btn:hover {
+      background: #ffd384;
+    }
+    .desc, .instructions, .reviews {
+      background: #232946;
+      border-radius: 10px;
+      padding: 1.2rem 1rem;
+      margin: 1.5rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .desc h2, .instructions h2, .reviews h2, .video-section h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+      color: #eebf63;
+    }
+    .video-section {
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .video-section iframe {
+      width: 100%;
+      max-width: 700px;
+      aspect-ratio: 16/9;
+      border-radius: 12px;
+      border: none;
+      background: #222;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    }
+    .reviews-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .reviews-list li {
+      border-bottom: 1px solid #2d3250;
+      padding: 0.7rem 0;
+    }
+    .reviews-list li:last-child {
+      border-bottom: none;
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 0.3rem;
+      }
+      .game-iframe, .video-section iframe {
+        max-width: 100vw;
+        min-width: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Fragen</h1>
+  </header>
+  <div class="container">
+    <section class="game-section">
+      <button class="play-btn" onclick="scrollToGame()">立即播放</button>
+      <div style="position:relative;width:100%;max-width:700px;aspect-ratio:16/9;min-height:300px;">
+        <iframe id="game-iframe" 
+          src="https://games.crazygames.com/en_US/fragen/index.html?v=1.335" 
+          title="Fragen" 
+          scrolling="no" 
+          allow="autoplay; payment; fullscreen; microphone; focus-without-user-activation *; screen-wake-lock; gamepad; clipboard-read; clipboard-write; accelerometer; gyroscope;" 
+          allowfullscreen="" 
+          sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-presentation allow-scripts allow-same-origin allow-downloads allow-popups allow-popups-to-escape-sandbox" 
+          loading="eager" 
+          importance="high" 
+          data-hj-allow-iframe="true" 
+          style="border:0;margin:0;padding:0;width:100%;height:100%;position:absolute;top:0;left:0;user-select:none;">
+        </iframe>
+      </div>
+    </section>
+    <section class="desc">
+      <h2>游戏简介</h2>
+      <p><strong>Fragen</strong></p>
+      <ul>
+        <li><strong>类型：</strong>第一人称射击游戏 (FPS)</li>
+        <li><strong>平台：</strong>HTML5（支持现代浏览器）+ Android</li>
+        <li><strong>玩法：</strong>这款游戏是一个快节奏的射击游戏，玩家将通过第一人称视角进行战斗。游戏提供了丰富的射击体验，并且支持全屏模式。</li>
+      </ul>
+    </section>
+    <section class="video-section">
+      <h2>游戏视频</h2>
+      <iframe width="560" height="315"
+        src="https://www.youtube.com/embed/vkC1j7J_hQQ"
+        title="Fragen | Play on CrazyGames | Browser Games"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </section>
+    <section class="instructions">
+      <h2>游戏说明</h2>
+      <ol>
+        <li><strong>开始游戏：</strong><br>
+          当你进入游戏时，你将处于一个射击场景中，需要与其他敌人进行对战。游戏的控制非常简便，适合快速上手。
+        </li>
+        <li><strong>操作方式：</strong><br>
+          <ul>
+            <li><strong>鼠标：</strong>移动鼠标瞄准，左键射击。</li>
+            <li><strong>键盘：</strong>W/A/S/D移动，Space跳跃，Shift加速，Ctrl蹲下，R换弹，E交互，Q切换武器。</li>
+            <li><strong>游戏手柄：</strong>左摇杆移动，右摇杆瞄准，按钮射击和互动。</li>
+          </ul>
+        </li>
+        <li><strong>游戏界面：</strong><br>
+          <ul>
+            <li>生命值（HP）：显示在屏幕上，被击中会减少，归零则游戏结束。</li>
+            <li>弹药：显示当前武器剩余弹药，R键换弹。</li>
+            <li>武器切换：Q键切换不同武器。</li>
+          </ul>
+        </li>
+        <li><strong>游戏玩法与目标：</strong><br>
+          主要目标是击败所有敌人并生存下来。不断移动、躲避攻击并用武器击败敌人。敌人会在地图不同位置出现，需要快速反应。合理利用战术和地图，争取有利位置。
+        </li>
+        <li><strong>游戏技巧：</strong><br>
+          <ul>
+            <li>利用掩体躲避攻击。</li>
+            <li>快速切换武器应对不同敌人。</li>
+            <li>精准瞄准头部造成更大伤害。</li>
+            <li>注意弹药，及时换弹或更换武器。</li>
+          </ul>
+        </li>
+        <li><strong>游戏模式和设置：</strong><br>
+          <ul>
+            <li>全屏模式：点击游戏内全屏按钮可切换全屏。</li>
+            <li>设置：可调整音量、画面效果等。</li>
+          </ul>
+        </li>
+        <li><strong>提示：</strong><br>
+          <ul>
+            <li>游戏采用HTML5技术，现代浏览器流畅运行，无需下载客户端。</li>
+            <li>支持移动端，可下载Android版本。</li>
+            <li>内置新手教程，帮助快速上手。</li>
+          </ul>
+        </li>
+      </ol>
+    </section>
+    <section class="reviews">
+      <h2>玩家评论</h2>
+      <ul class="reviews-list">
+        <li>“这款游戏太棒了！画面精美，玩法有趣。” —— 玩家A</li>
+        <li>“操作简单易上手，推荐给所有喜欢休闲游戏的朋友。” —— 玩家B</li>
+        <li>“希望能增加更多关卡！” —— 玩家C</li>
+      </ul>
+    </section>
+  </div>
+  <script>
+    function scrollToGame() {
+      document.getElementById('game-frame').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html> 
