@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://fragen-tau.vercel.app/sitemap.xml
